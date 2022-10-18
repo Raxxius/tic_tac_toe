@@ -1,70 +1,37 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Tic Tac Toe
 
-In the project directory, you can run:
+Tic Tac Toe game constructed using the react framework.
 
-### `npm start`
+## Site Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Tic Tac Toe is a single page interactive game using React state and hooks to create an interactive game board that allows people to play Tic Tac Toe (Noughts and Crosses).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Site Requirements
 
-### `npm test`
+The requirements of the site is to allow two people to play the game, with the state of the game being recorded by the site, with a winner or tie selected when one player wins or all squares are filled.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Site Design
 
-### `npm run build`
+### Basic Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The site is a single page with a title header h1 and 3 React components, GameBoard, GameStatus and Reset.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3 React Hooks are maintained at this level, gameState - who's turn it is, gameBoard - where the board has been marked, and gameWinner - who has won the game, or a tie in the event of no further moves avalible.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+the onClick events have 2 functions, onClick, which chains functions to update the gameBoard, gameStatus and check for win conditions to update gameWinner if relevant. And the onClickReset, which resets the gameBoard gameStatus and gameWinner to default to restart the game. 
 
-### `npm run eject`
+### GameBoard Component
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The GameBoard component comprises 9 square sub components, with gameBoard props and an onClick event passed down from the App component. When a div is clicked, the onClick function is processed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### GameStatus Component
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Gamestatus component is a div with props of gameStatus being passed down.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+If the game is in progress, game status will display who's turn it is, if the game has been won then the winner will be presented in the status. In the event that all 9 squares are filled without a winner a tie will be declared
 
-## Learn More
+### Reset
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The reset button activated the reset event that changes the gameboard to the default state. 
