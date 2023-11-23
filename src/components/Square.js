@@ -13,6 +13,12 @@ const Square = (props) => {
     justifyContent: "center"
   }
 
+  const valueStyle = {
+    fontSize: "1",
+    lineHeight: "1",
+    margin: "0",
+  }
+
   const handleOnClick = (id) => {
     props.handleOnClick(id)
   }
@@ -24,7 +30,7 @@ const Square = (props) => {
       style={style}
       onClick={() => handleOnClick(props.id)}
       >
-      <h2>{props.fill}</h2>
+      <h2 style={valueStyle}>{props.fill}</h2>
     </div>
   )
 }

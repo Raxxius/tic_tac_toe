@@ -6,7 +6,6 @@ const GameBoard = (props) => {
       display: "grid", 
       gridTemplateColumns: "200px 200px 200px",
       gridTemplateRows: "200px 200px 200px",
-      gap: "5px 5px",
       justifyContent: "center",
     }
     const squares = props.gameBoard.map(square => {
